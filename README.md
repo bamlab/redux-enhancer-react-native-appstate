@@ -36,3 +36,41 @@ function reducer(state = '', action) {
       return state
   }
 }
+```
+
+### Usage with Redux Saga
+
+Make sure that this enhancer is applied before the saga middleware.
+Otherwise, your saga would not be able to intercept the actions.
+
+```javascript
+// good
+const store = createStore(reducers, initalState, [
+  applyAppStateListener(),
+  applyMiddleware(sagaMiddleware),
+]);
+
+// bad
+const store = createStore(reducers, initalState, [
+  applyMiddleware(sagaMiddleware),
+  applyAppStateListener(),
+]);
+```
+
+Then you can define a saga like:
+
+```javascript
+import { takeLatest } from 'redux-saga/effects';
+import { FOREGROUND } from 'redux-enhancer-react-native-appstate';
+
+function* appHasComeBackToForeground() {
+  // app has come back to foreground!
+}
+
+function* watchForAppBackToForeground() {
+  yield takeLatest(
+    FOREGROUND,
+    catchApiExceptions(appHasComeBackToForeground),
+  );
+}
+```
