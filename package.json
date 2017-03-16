@@ -1,6 +1,6 @@
 {
   "name": "redux-enhancer-react-native-appstate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Connect your App State changes directly to your Redux store",
   "main": "index.js",
   "repository": "https://github.com/bamlab/redux-enhancer-react-native-appstate.git",
