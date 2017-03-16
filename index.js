@@ -1,5 +1,3 @@
-// @flow
-
 import { AppState } from 'react-native';
 
 export const FOREGROUND = 'APP_STATE.FOREGROUND';
