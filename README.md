@@ -26,12 +26,16 @@ The store will now automatically dispatch app state related actions.
 
 For instance, you can use it in a reducer:
 ```javascript
-import { FOREGROUND } from 'redux-enhancer-react-native-appstate';
+import { FOREGROUND, BACKGROUND, INACTIVE } from 'redux-enhancer-react-native-appstate';
 
 function reducer(state = '', action) {
   switch (action.type) {
     case FOREGROUND:
       return 'back to foreground';
+    case BACKGROUND:
+      return 'background';
+    case INACTIVE:
+      return 'inactive';
     default:
       return state
   }
@@ -61,7 +65,7 @@ Then you can define a saga like:
 
 ```javascript
 import { takeLatest } from 'redux-saga/effects';
-import { FOREGROUND } from 'redux-enhancer-react-native-appstate';
+import { FOREGROUND, BACKGROUND, INACTIVE } from 'redux-enhancer-react-native-appstate';
 
 function* appHasComeBackToForeground() {
   // app has come back to foreground!
