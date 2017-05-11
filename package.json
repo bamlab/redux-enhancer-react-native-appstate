@@ -1,9 +1,26 @@
 {
   "name": "redux-enhancer-react-native-appstate",
-  "version": "0.1.1",
+  "version": "0.0.0-managed-by-semantic-release",
   "description": "Connect your App State changes directly to your Redux store",
   "main": "index.js",
   "repository": "https://github.com/bamlab/redux-enhancer-react-native-appstate.git",
   "author": "Almouro <contact@almouro.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commitmsg": "validate-commit-msg",
+    "commit": "git-cz"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "husky": "^0.13.3",
+    "semantic-release": "^6.3.6",
+    "validate-commit-msg": "^2.12.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
