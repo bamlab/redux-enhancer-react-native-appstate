@@ -7,7 +7,7 @@ export const INACTIVE = 'APP_STATE.INACTIVE';
 export default () => (createStore) => (...args) => {
   const store = createStore(...args);
 
-  let currentState = AppState.currentState;
+  let currentState = '';
 
   const handleAppStateChange = (nextAppState) => {
     if (currentState !== nextAppState) {
@@ -29,6 +29,6 @@ export default () => (createStore) => (...args) => {
   };
 
   AppState.addEventListener('change', handleAppStateChange);
-
+  handleAppStateChange(AppState.currentState);
   return store;
 };
