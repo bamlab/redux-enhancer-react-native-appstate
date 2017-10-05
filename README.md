@@ -78,3 +78,7 @@ function* watchForAppBackToForeground() {
   );
 }
 ```
+
+## Contributing
+
+See [our contributing guidelines](https://bamlab.github.io/open-source/#contributing)
