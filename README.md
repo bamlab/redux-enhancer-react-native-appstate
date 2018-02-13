@@ -49,16 +49,16 @@ Otherwise, your saga would not be able to intercept the actions.
 
 ```javascript
 // good
-const store = createStore(reducers, initalState, [
+const store = createStore(reducers, initalState, composeEnhancers(
   applyAppStateListener(),
-  applyMiddleware(sagaMiddleware),
-]);
+  applyMiddleware(sagaMiddleware)
+));
 
 // bad
-const store = createStore(reducers, initalState, [
+const store = createStore(reducers, initalState, composeEnhancers(
   applyMiddleware(sagaMiddleware),
-  applyAppStateListener(),
-]);
+  applyAppStateListener()
+));
 ```
 
 Then you can define a saga like:
