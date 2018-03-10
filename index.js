@@ -29,6 +29,6 @@ export default () => (createStore) => (...args) => {
   };
 
   AppState.addEventListener('change', handleAppStateChange);
-  handleAppStateChange(AppState.currentState);
+  setTimeout(() => handleAppStateChange(AppState.currentState));
   return store;
 };
