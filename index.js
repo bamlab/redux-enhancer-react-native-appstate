@@ -29,6 +29,8 @@ export default () => (createStore) => (...args) => {
   };
 
   AppState.addEventListener('change', handleAppStateChange);
+  
+  // setTimeout to allow redux-saga to catch the initial state fired by redux-enhancer-react-native-appstate library
   setTimeout(() => handleAppStateChange(AppState.currentState));
   return store;
 };
