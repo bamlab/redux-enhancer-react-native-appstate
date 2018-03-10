@@ -9,7 +9,8 @@
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commitmsg": "validate-commit-msg",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "test": "echo 'no test'"
   },
   "devDependencies": {
     "commitizen": "^2.9.6",
