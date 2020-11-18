@@ -16,7 +16,7 @@
     "commitizen": "^2.9.6",
     "cz-conventional-changelog": "^2.0.0",
     "husky": "^0.13.3",
-    "semantic-release": "^6.3.6",
+    "semantic-release": "^17.2.3",
     "validate-commit-msg": "^2.12.1"
   },
   "config": {
